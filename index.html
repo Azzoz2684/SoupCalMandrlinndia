@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="حاسبة وصفات الصابون بالعربية: حساب NaOH وKOH والماء والدهون الزائدة، مع حفظ الوصفات والعمل دون اتصال.">
+  <meta name="theme-color" content="#2f6f5e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="حاسبة الصابون">
+  <title>حاسبة الصابون</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <div>
+        <h1>حاسبة الصابون</h1>
+        <p class="muted">حساب وصفات التصبن بالصودا والبوتاس، مع حفظ الوصفات محليًا</p>
+      </div>
+    </div>
+    <div class="toolbar" role="toolbar" aria-label="أدوات الوصفة">
+      <button type="button" class="btn" data-action="new">وصفة جديدة</button>
+      <button type="button" class="btn btn-primary" data-action="save">حفظ</button>
+      <button type="button" class="btn" data-action="copy">نسخ الوصفة</button>
+      <button type="button" class="btn btn-danger" data-action="delete">حذف المحفوظة</button>
+      <button type="button" class="btn" data-action="export">تصدير JSON</button>
+      <label class="btn file-btn">استيراد JSON
+        <input type="file" accept="application/json,.json" id="importFile" hidden>
+      </label>
+      <button type="button" class="btn" data-action="print">طباعة</button>
+      <button type="button" class="btn btn-accent" id="installBtn" hidden>تثبيت التطبيق</button>
+    </div>
+  </header>
+
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+
+  <main class="layout">
+    <aside class="panel saved-panel" aria-labelledby="saved-title">
+      <h2 id="saved-title">الوصفات المحفوظة</h2>
+      <div id="savedList"></div>
+    </aside>
+
+    <section class="editor" id="editor" aria-label="محرر الوصفة"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      قيم التصبن نموذجية، وتختلف بحسب الزيت ونوعه ودفعته ومصدره. المكوّنات المعلَّمة "غير موثقة" لا تُعتمد للإنتاج قبل التحقق.
+      الحفظ محلي على هذا الجهاز فقط، ولا توجد مزامنة سحابية.
+    </p>
+    <p id="offlineNote" class="muted-note"></p>
+  </footer>
+
+  <noscript><p class="msg msg-error">تحتاج الحاسبة إلى تفعيل JavaScript لتعمل.</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

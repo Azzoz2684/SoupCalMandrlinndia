@@ -1,0 +1,14 @@
+{
+  "name": "soap-calc-ar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "حاسبة وصفات الصابون بالعربية (RTL) — محرك حسابات مستقل مع اختبارات",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/engine.test.js tests/oils.test.js tests/recipe-model.test.js tests/pwa.test.js",
+    "start": "python3 -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
